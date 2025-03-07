@@ -44,10 +44,25 @@ function App() {
     }
   };
 
+  const [position, setPosition] = useState({ x: 50, y: 50 });
+
+  const handleMouseMove = (e) => {
+    const { innerWidth, innerHeight } = window;
+    const x = (e.clientX / innerWidth) * 100;
+    const y = (e.clientY / innerHeight) * 100;
+    setPosition({ x, y });
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200">
+    <div className="min-h-screen bg-gray-900 text-gray-200" onMouseMove={handleMouseMove} style={{
+      background: `radial-gradient(
+        at ${position.x}% ${position.y}%,
+rgb(6, 24, 73),
+rgb(3, 1, 24)
+      )`,
+    }}>
       {/* Logo and Title */}
-      <div className="flex items-center space-x-2 justify-center p-4">
+      <div className="flex items-center space-x-2 justify-center p-4" >
         <img src={Logo} alt="Logo 1" className="h-15" />
         <span className="font-bold text-xl">SpaceBucks</span>
       </div>
