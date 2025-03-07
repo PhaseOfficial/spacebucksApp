@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://phaseofficial.github.io/spacebucksApp/",
+  "homepage": "https://loans.spacebucks.co.zw/",
   "scripts": {
   "dev": "vite",
   "build": "vite build",
